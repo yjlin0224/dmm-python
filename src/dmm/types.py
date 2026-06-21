@@ -1,7 +1,7 @@
 from enum import StrEnum
-from typing import Literal
+from typing import Literal, TypeAlias
 
-type DMMHttpMethod = Literal["GET"]
+DMMHttpMethod: TypeAlias = Literal["GET"]
 
 
 class DMMSiteCode(StrEnum):
