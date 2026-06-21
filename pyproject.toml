@@ -4,12 +4,15 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "yjlin0224", email = "yjlin0224@outlook.com" }]
-requires-python = ">=3.14"
-dependencies = ["msgspec>=0.20.0"]
+requires-python = ">=3.11"
+dependencies = ["msgspec>=0.17.0"]
 
 [project.optional-dependencies]
-requests = ["requests>=2.32.5"]
-httpx = ["httpx>=0.28.1"]
+requests = ["requests>=2.28.0"]
+httpx = ["httpx>=0.23.1"]
+
+[dependency-groups]
+dev = ["requests>=2.28.0", "httpx>=0.23.1"]
 
 [build-system]
 requires = ["uv_build>=0.9.5,<0.10.0"]
