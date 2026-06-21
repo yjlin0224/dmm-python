@@ -82,6 +82,10 @@ class DMMActressListURL(msgspec.Struct, kw_only=True, frozen=True):
     monthly: str
     mono: str
 
+    # undocumented fields
+    ppm: str | msgspec.UnsetType = msgspec.UNSET  # [TODO] unsure
+    rental: str | msgspec.UnsetType = msgspec.UNSET  # [TODO] unsure
+
 
 class DMMActressSearchResponseBodyResultActress(
     msgspec.Struct, kw_only=True, frozen=True
@@ -94,13 +98,15 @@ class DMMActressSearchResponseBodyResultActress(
     blood_type: Optional[str]
     hobby: Optional[str]
     prefectures: Optional[str]
-    image_url: DMMActressImageURL = msgspec.field(name="imageURL")
+    image_url: DMMActressImageURL | msgspec.UnsetType = msgspec.field(
+        name="imageURL", default=msgspec.UNSET
+    )
     list_url: DMMActressListURL = msgspec.field(name="listURL")
 
-    _bust: Optional[str] = msgspec.field(name="bust", default=None)
-    _waist: Optional[str] = msgspec.field(name="waist", default=None)
-    _hip: Optional[str] = msgspec.field(name="hip", default=None)
-    _height: Optional[str] = msgspec.field(name="height", default=None)
+    _bust: Optional[str] = msgspec.field(name="bust")
+    _waist: Optional[str] = msgspec.field(name="waist")
+    _hip: Optional[str] = msgspec.field(name="hip")
+    _height: Optional[str] = msgspec.field(name="height")
 
     @property
     def bust(self) -> Optional[int]:

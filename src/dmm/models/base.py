@@ -53,15 +53,23 @@ class DMMRequestData(msgspec.Struct, kw_only=True, frozen=True):
 
 
 class DMMResponseBodyResultPaginationMixin(msgspec.Struct, kw_only=True, frozen=True):
-    status: str
     result_count: int
-    first_position: int
 
-    _total_count: str = msgspec.field(name="total_count")
+    _status: int | str = msgspec.field(name="status")
+    _first_position: int | str = msgspec.field(name="first_position")
+    _total_count: int | str = msgspec.field(name="total_count")
+
+    @property
+    def status(self) -> int:
+        return int(self._status)
+
+    @property
+    def first_position(self) -> int:
+        return int(self._first_position)
 
     @property
     def total_count(self) -> int:
-        return int(self._total_count.strip())
+        return int(self._total_count)
 
 
 class DMMResponseBodyRequest(msgspec.Struct, kw_only=True, frozen=True):

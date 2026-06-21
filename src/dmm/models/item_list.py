@@ -1,6 +1,6 @@
 from datetime import datetime
 from enum import StrEnum
-from typing import Annotated, Literal, Optional
+from typing import Annotated, Optional
 
 import msgspec
 
@@ -27,7 +27,7 @@ __all__ = [
     "DMMItemListResponseBodyResultItemItemInfo",
     "DMMItemListResponseBodyResultItemCDInfo",
     "DMMItemListResponseBodyResultItemCampaign",
-    "DMMItemListResponseBodyResultItemBandiInfo",
+    "DMMItemListResponseBodyResultItemBandaiInfo",
     "DMMItemListResponseBodyResultItem",
     "DMMItemListResponseBodyResult",
     "DMMItemListResponseBody",
@@ -99,37 +99,47 @@ class DMMItemListResponseBodyResultItemImageURL(
     msgspec.Struct, kw_only=True, frozen=True
 ):
     list: str
-    small: str
-    large: str
+    small: str | msgspec.UnsetType = msgspec.UNSET
+    large: str | msgspec.UnsetType = msgspec.UNSET
 
 
 class DMMItemListResponseBodyResultItemTachiyomi(
     msgspec.Struct, kw_only=True, frozen=True
 ):
-    url: str
-    affiliate_url: str = msgspec.field(name="affiliateURL")
+    url: str = msgspec.field(name="URL")  # [TODO] unsure
+    affiliate_url: str = msgspec.field(name="affiliateURL")  # [TODO] unsure
+
+
+class _DMMItemListResponseBodyResultItemSampleImageURLSample(
+    msgspec.Struct, kw_only=True, frozen=True
+):
+    image: list[str]
 
 
 class DMMItemListResponseBodyResultItemSampleImageURL(
     msgspec.Struct, kw_only=True, frozen=True
 ):
-    _sample_s: dict[Literal["image"], list[str]] | msgspec.UnsetType = msgspec.field(
-        name="sample_s", default=msgspec.UNSET
-    )
-    _sample_l: dict[Literal["image"], list[str]] | msgspec.UnsetType = msgspec.field(
-        name="sample_l", default=msgspec.UNSET
-    )
+    _sample_s: (
+        _DMMItemListResponseBodyResultItemSampleImageURLSample | msgspec.UnsetType
+    ) = msgspec.field(name="sample_s", default=msgspec.UNSET)
+    _sample_l: (
+        _DMMItemListResponseBodyResultItemSampleImageURLSample | msgspec.UnsetType
+    ) = msgspec.field(name="sample_l", default=msgspec.UNSET)
 
     @property
     def sample_s_images(self) -> list[str]:
-        if isinstance(self._sample_s, dict):
-            return self._sample_s.get("image", [])
+        if isinstance(
+            self._sample_s, _DMMItemListResponseBodyResultItemSampleImageURLSample
+        ):
+            return self._sample_s.image
         return []
 
     @property
     def sample_l_images(self) -> list[str]:
-        if isinstance(self._sample_l, dict):
-            return self._sample_l.get("image", [])
+        if isinstance(
+            self._sample_l, _DMMItemListResponseBodyResultItemSampleImageURLSample
+        ):
+            return self._sample_l.image
         return []
 
 
@@ -158,8 +168,10 @@ class DMMItemListResponseBodyResultItemPriceInfoDelivery(
 ):
     type: str
 
-    _price: str
-    _list_price: str
+    _price: str = msgspec.field(name="price")
+
+    # undocumented fields
+    _list_price: str = msgspec.field(name="list_price")
 
     @property
     def price(self) -> int:
@@ -170,51 +182,70 @@ class DMMItemListResponseBodyResultItemPriceInfoDelivery(
         return int(self._list_price)
 
 
+class _DMMItemListResponseBodyResultItemPriceInfoDeliveries(
+    msgspec.Struct, kw_only=True, frozen=True
+):
+    delivery: list[DMMItemListResponseBodyResultItemPriceInfoDelivery]
+
+
 class DMMItemListResponseBodyResultItemPriceInfo(
     msgspec.Struct, kw_only=True, frozen=True
 ):
     _price: str = msgspec.field(name="price")
-    _list_price: str = msgspec.field(name="list_price")
+    _list_price: str | msgspec.UnsetType = msgspec.field(
+        name="list_price", default=msgspec.UNSET
+    )
     _deliveries: (
-        dict[
-            Literal["delivery"],
-            list[DMMItemListResponseBodyResultItemPriceInfoDelivery],
-        ]
-        | msgspec.UnsetType
+        _DMMItemListResponseBodyResultItemPriceInfoDeliveries | msgspec.UnsetType
     ) = msgspec.field(name="deliveries", default=msgspec.UNSET)
 
-    # [TODO] unsure
+    # undocumented fields
+    _price_all: str | msgspec.UnsetType = msgspec.field(
+        name="price_all", default=msgspec.UNSET
+    )  # [TODO] unsure
+
     @property
     def price_start_at(self) -> int:
         return int(self._price.removesuffix("~"))
 
-    # [TODO] unsure
     @property
-    def list_price_start_at(self) -> int:
+    def list_price_start_at(self) -> Optional[int]:
+        if not isinstance(self._list_price, str):
+            return None
         return int(self._list_price.removesuffix("~"))
 
     @property
+    def price_all_start_at(self) -> Optional[int]:
+        if not isinstance(self._price_all, str):
+            return None
+        return int(self._price_all.removesuffix("~"))
+
+    @property
     def deliveries(self) -> list[DMMItemListResponseBodyResultItemPriceInfoDelivery]:
-        if isinstance(self._deliveries, dict):
-            return self._deliveries.get("delivery", [])
+        if isinstance(
+            self._deliveries, _DMMItemListResponseBodyResultItemPriceInfoDeliveries
+        ):
+            return self._deliveries.delivery
         return []
 
 
 class DMMItemListResponseBodyResultItemItemInfoData(
     msgspec.Struct, kw_only=True, frozen=True
 ):
-    _id: int
     name: str
+
+    _id: int | str = msgspec.field(name="id")
 
     @property
     def id(self) -> str:
+        # [TODO] API may return non-numeric strings (e.g. 'other'); consider returning str | None
         return str(self._id)
 
 
 class DMMItemListResponseBodyResultItemItemInfoDataWithRuby(
     DMMItemListResponseBodyResultItemItemInfoData, kw_only=True, frozen=True
 ):
-    ruby: str
+    ruby: str | msgspec.UnsetType = msgspec.UNSET
 
 
 class DMMItemListResponseBodyResultItemItemInfo(
@@ -337,13 +368,22 @@ class DMMItemListResponseBodyResultItemCDInfo(
 class DMMItemListResponseBodyResultItemCampaign(
     msgspec.Struct, kw_only=True, frozen=True
 ):
-    date_begin: datetime
-    date_end: datetime
     title: str
+
+    _date_begin: str = msgspec.field(name="date_begin")
+    _date_end: str = msgspec.field(name="date_end")
+
+    @property
+    def date_begin(self) -> datetime:
+        return datetime.fromisoformat(self._date_begin)
+
+    @property
+    def date_end(self) -> datetime:
+        return datetime.fromisoformat(self._date_end)
 
 
 # undocumented
-class DMMItemListResponseBodyResultItemBandiInfo(
+class DMMItemListResponseBodyResultItemBandaiInfo(
     msgspec.Struct, kw_only=True, frozen=True
 ):
     title_code: str = msgspec.field(name="titlecode")
@@ -358,7 +398,7 @@ class DMMItemListResponseBodyResultItem(msgspec.Struct, kw_only=True, frozen=Tru
     content_id: str
     product_id: str
     title: str
-    review: DMMItemListResponseBodyResultItemReview
+    review: DMMItemListResponseBodyResultItemReview | msgspec.UnsetType = msgspec.UNSET
     url: str = msgspec.field(name="URL")
     affiliate_url: str = msgspec.field(name="affiliateURL")
     image_url: DMMItemListResponseBodyResultItemImageURL = msgspec.field(
@@ -367,16 +407,15 @@ class DMMItemListResponseBodyResultItem(msgspec.Struct, kw_only=True, frozen=Tru
     tachiyomi: DMMItemListResponseBodyResultItemTachiyomi | msgspec.UnsetType = (
         msgspec.UNSET
     )
-    sample_image_url: DMMItemListResponseBodyResultItemSampleImageURL = msgspec.field(
-        name="sampleImageURL"
-    )
+    sample_image_url: (
+        DMMItemListResponseBodyResultItemSampleImageURL | msgspec.UnsetType
+    ) = msgspec.field(name="sampleImageURL", default=msgspec.UNSET)
     sample_movie_url: (
         DMMItemListResponseBodyResultItemSampleMovieURL | msgspec.UnsetType
     ) = msgspec.field(name="sampleMovieURL", default=msgspec.UNSET)
     price_info: DMMItemListResponseBodyResultItemPriceInfo = msgspec.field(
         name="prices"
     )
-    date: datetime
     item_info: DMMItemListResponseBodyResultItemItemInfo = msgspec.field(
         name="iteminfo"
     )
@@ -398,24 +437,34 @@ class DMMItemListResponseBodyResultItem(msgspec.Struct, kw_only=True, frozen=Tru
         name="affiliateURLsp", default=msgspec.UNSET
     )
     comment: str | msgspec.UnsetType = msgspec.UNSET
-    bandi_info: DMMItemListResponseBodyResultItemBandiInfo | msgspec.UnsetType = (
-        msgspec.UNSET
+    bandai_info: DMMItemListResponseBodyResultItemBandaiInfo | msgspec.UnsetType = (
+        msgspec.field(name="bandaiinfo", default=msgspec.UNSET)
     )
 
+    _date: str = msgspec.field(name="date")
     _volume: str = msgspec.field(name="volume")
     _number: str | msgspec.UnsetType = msgspec.field(  # [TODO] unsure
         name="number", default=msgspec.UNSET
     )
-    _directories: (  # [TODO] unsure
+    _directories: (
         list[DMMItemListResponseBodyResultItemItemInfoData] | msgspec.UnsetType
     ) = msgspec.field(name="directory", default=msgspec.UNSET)
-    _campaigns: (  # [TODO] unsure
-        list[DMMItemListResponseBodyResultItemCampaign] | msgspec.UnsetType
-    ) = msgspec.field(name="campaign", default=msgspec.UNSET)
+    _campaigns: list[DMMItemListResponseBodyResultItemCampaign] | msgspec.UnsetType = (
+        msgspec.field(name="campaign", default=msgspec.UNSET)
+    )
+
+    @property
+    def date(self) -> datetime:
+        return datetime.fromisoformat(self._date)
 
     @property
     def volume(self) -> int:
-        return int(self._volume)
+        # "120" → 120 minutes; "1:07:00" (H:MM:SS) → 67 minutes
+        v = self._volume
+        if ":" in v:
+            h, m, _ = v.split(":")
+            return int(h) * 60 + int(m)
+        return int(v)
 
     @property
     def number(self) -> Optional[int]:
@@ -433,13 +482,7 @@ class DMMItemListResponseBodyResultItem(msgspec.Struct, kw_only=True, frozen=Tru
 class DMMItemListResponseBodyResult(
     DMMResponseBodyResultPaginationMixin, kw_only=True, frozen=True
 ):
-    _items: list[DMMItemListResponseBodyResultItem] | msgspec.UnsetType = msgspec.field(
-        name="items", default=msgspec.UNSET
-    )
-
-    @property
-    def items(self) -> list[DMMItemListResponseBodyResultItem]:
-        return self._items if isinstance(self._items, list) else []
+    items: list[DMMItemListResponseBodyResultItem]
 
 
 class DMMItemListResponseBody(DMMResponseBodyMixin, kw_only=True, frozen=True):

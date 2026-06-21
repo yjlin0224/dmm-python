@@ -54,7 +54,9 @@ class DMMArticleSearchResponseBodyResultArticleMixin(
 ):
     name: str
     ruby: str
-    list_url: str
+    list_url: str | msgspec.UnsetType = msgspec.field(
+        name="list_url", default=msgspec.UNSET
+    )
 
 
 class DMMGenreSearchResponseBodyResultGenre(
@@ -67,6 +69,9 @@ class DMMMakerSearchResponseBodyResultMaker(
     DMMArticleSearchResponseBodyResultArticleMixin, kw_only=True, frozen=True
 ):
     maker_id: str
+
+    # undocumented fields
+    another_name: str | msgspec.UnsetType = msgspec.UNSET
 
 
 class DMMSeriesSearchResponseBodyResultSeries(
