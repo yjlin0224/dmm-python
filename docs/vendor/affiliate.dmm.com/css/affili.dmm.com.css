@@ -1,0 +1,1834 @@
+@charset "UTF-8";
+/*
+// ===============================
+// 				 基本パーツ
+// ===============================
+ */
+
+/* ================================= [ .af-page ] */
+#w #af-page{
+text-align:center;
+background:url(https://pics.dmm.com/p/affiliate/base/bg_page.gif) repeat-y center top;
+}	
+#w #af-content{
+width:730px;
+margin:10px auto;
+padding:6px 12px;
+text-align:left;
+}
+
+/* ================================= [ .af-headline ] */
+#w .af-headline {
+padding-left: 4px;
+padding-bottom: 2px;
+border-bottom: 2px #303030 solid;
+font-size: 20px;
+font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+font-weight: normal;
+background:url(https://pics.dmm.com/p/affiliate/base/bg_headline.gif) no-repeat right bottom;
+}
+#w .af-headline span.af-txten {
+margin-left: 6px;
+font-size: 10px;
+font-weight: normal;
+color:#999;
+}
+
+#w .af-boxcaptside {
+padding: 12px;
+background: #eee;
+overflow: hidden;
+font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+/*
+#w .af-boxcaptside {
+padding: 12px;
+border-top:2px #303030 solid;
+background: #eee;
+overflow: hidden;
+font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+*/
+/* ================================= [ .af-capt ] */
+.af-capt{
+border-bottom:2px dotted #000;
+}
+.af-capt h2{
+margin-bottom:10px;
+}
+
+/* ================================= [ .af-service ] */
+.af-service{
+background:#fff;
+}
+.af-service h3{
+margin:0;
+padding:0 10px;
+font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+font-size:20px;
+font-weight:normal;
+}
+/*
+.af-service{
+background:#333;
+}
+
+.af-service h3{
+line-height:40px;
+margin:0;
+padding:0 10px;
+font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+font-size:14px;
+color:#fff;
+}
+*/
+/* ================================= [ .af-side-contents ] */
+.af-side-contents{
+background:#1b1b1b;
+text-align:center;
+}
+.af-side-menu-ttl{
+margin:10px;
+}
+.af-side-menu{
+margin:0;
+padding:0;
+text-align:left;
+list-style:none;
+}
+.af-side-menu li{
+margin:0;
+border-top:1px solid #7d7d7d;
+border-bottom:1px solid #555;
+line-height:34px;
+color:#fff;
+background:url(https://pics.dmm.com/p/affiliate/base/bg_sm_arrow.png) no-repeat right center #666;
+}
+.af-side-menu li > a{
+display:block;
+width:165px;
+height:36px;
+padding:0 10px;
+color:#fff;
+}
+/* ================================= [ .af-regist ] */
+.af-regist{
+width:730px;
+height:240px;
+margin:20px 0;
+background:url(https://pics.dmm.com/p/affiliate/top/bg_regist.gif) no-repeat center top;
+clear:both;
+}
+.af-regist img{
+margin-top:40px;
+}
+/* ================================= [ .af-floor-capt ] */
+.af-floor-capt{
+line-height:36px;
+font-size:14px;
+font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+font-weight:bold;
+}
+.af-floor-capt p{
+margin:0;
+padding-left:38px;
+}
+.af-floor-capt p.dfriend{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_dfriend.gif) no-repeat left center;
+border-bottom:2px solid #333;
+}
+.af-floor-capt p.premium{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_premium.gif) no-repeat left center;
+border-bottom:2px solid #000;
+}
+.af-floor-capt p.premium_fanza{
+background:url(https://p.dmm.co.jp/p/affiliate/fee/bg_capt_fanzatv.gif) no-repeat left center;
+border-bottom:2px solid #000;
+}
+.af-floor-capt p.dl{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_dl.gif) no-repeat left center;
+border-bottom:2px solid #ff9900;
+}
+.af-floor-capt p.ppm{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_ppm.gif) no-repeat left center;
+border-bottom:2px solid #ff6600;
+}
+.af-floor-capt p.monthly{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_monthly.gif) no-repeat left center;
+border-bottom:2px solid #ea4848;
+}
+.af-floor-capt p.rental{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_rental.gif) no-repeat left center;
+border-bottom:2px solid #3e7ad5;
+}
+.af-floor-capt p.lc{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_lc.gif) no-repeat left center;
+border-bottom:2px solid #22d3ff;
+}
+.af-floor-capt p.mono{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_mono.gif) no-repeat left center;
+border-bottom:2px solid #00cc66;
+}
+.af-floor-capt p.lod{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_lod.gif) no-repeat left center;
+border-bottom:2px solid #f43674;
+}
+.af-floor-capt p.lt{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_lt.gif) no-repeat left center;
+border-bottom:2px solid #22d3ff;
+}
+.af-floor-capt p.game{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_netgame.gif) no-repeat left center;
+border-bottom:2px solid #a633ff;
+}
+.af-floor-capt p.print3d{
+background:url(https://pics.dmm.com/p/affiliate/fee/bg_capt_3d.gif) no-repeat left center;
+border-bottom:2px solid #008eb1;
+}
+
+.af-floor-capt p.eikaiwa {
+background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_eikaiwa.gif) no-repeat left center;
+border-bottom: 2px solid #ffc600;
+}
+.af-floor-capt p.kaitori {
+ background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_kaitori.gif) no-repeat left center;
+ border-bottom: 2px solid #00cdae;
+}
+.af-floor-capt p.dmmcard {
+ background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_card.gif) no-repeat left center;
+ border-bottom: 2px solid #169cc2;
+}
+.af-floor-capt p.dmmscratch {
+ background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_scratch.gif) no-repeat left center;
+ border-bottom: 2px solid #0579C1;
+}
+.af-floor-capt p.crane {
+ background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_crane.gif) no-repeat left center;
+ border-bottom: 2px solid #00ddce;
+}
+.af-floor-capt p.vc {
+ background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_vc.gif) no-repeat left center;
+ border-bottom: 2px solid #0579C1;
+}
+.af-floor-capt p.kuji {
+ background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_kuji.gif) no-repeat left center;
+ border-bottom: 2px solid #D01F18;
+}
+.af-floor-capt p.fanza_onkure {
+	background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_fanza_onkure.gif) no-repeat left center;
+	border-bottom: 2px solid #D01F18;
+}
+.af-floor-capt p.royal_catch {
+	background: url(https://pics.dmm.com/p/affiliate/fee/bg_capt_royal-catch.gif) no-repeat left center;
+	border-bottom: 2px solid #D01F18;
+}
+/* ================================= [ .af-tbl ] */
+.af-tbl {
+background: #fff;
+}
+.af-tbl th {
+padding: 5px 8px;
+}
+.af-tbl td {
+height: 26px;
+padding: 6px;
+}
+
+/* ================================= [ af-tbl td-color ] */
+.af-tbl .odd ,
+.af-tbl .odd td {
+background: #f4f4f4;
+}
+.af-tbl .tbl-hl ,
+.af-tbl .odd .tbl-hl {
+background:#f4f4f4;
+font-weight: bold;
+}
+.af-tbl .th-floor{
+  min-width: 112px;
+  max-width: 112px;
+  box-sizing: border-box;
+  padding:12px 8px;
+  font-size:14px;
+  font-weight:bold;
+}
+.th-floor > .img-fee-up-category {
+  margin-top: 10px;
+  text-align: center;
+}
+.af-tbl th.th-blue {
+background: #3661de;
+color:#fff;
+}
+.af-tbl td.cl-blu {
+background: #eef6ff;
+}
+.af-tbl .odd td.cl-blu {
+background: #d2e7fe;
+}
+.af-tbl th.th-grn {
+background: #18b4d0;
+color:#fff;
+}
+.af-tbl td.cl-grn {
+background: #eef6ff;
+}
+.af-tbl .odd td.cl-grn {
+background: #b2ecf6;
+}
+.af-tbl th.th-pnk {
+background: #e357b0;
+color:#fff;
+}
+.af-tbl th.th-scrt {
+	background: #ea4037de;
+	color:#fff;
+}
+.af-tbl td.cl-scrt {
+	background: #feccc8de;
+}	
+.af-tbl td.cl-pnk {
+background: #fff7fd;
+}
+.af-tbl .odd td.cl-pnk {
+background: #fae6f5;
+}
+.af-tbl th.th-ppl {
+background: #9f40db;
+color:#fff;
+}
+.af-tbl td.cl-ppl {
+background: #f7f5ff;
+}
+.af-tbl .odd td.cl-ppl {
+background: #ebe6fd;
+}
+
+
+.af-tbl .cl-red td {
+background: #ffbabc;
+}
+.af-tbl .cl-red-odd td {
+background: #ffebec;
+}
+.af-tbl .cl-red .tbl-hl ,
+.af-tbl .cl-red-odd .tbl-hl {
+background: #a20000;
+}
+
+.af-tbl td.cl-ylw {
+background: #fffff2;
+}
+.af-tbl .odd td.cl-ylw {
+background: #fdfdb9;
+}
+.af-tbl td.cl-red {
+background: #ffbabc;
+}
+.af-tbl .odd td.cl-red {
+background: #ffebec;
+}
+
+.af-tbl th.tbl-hl-blue {
+background: #bbeafc;
+color:#333;
+}
+
+.af-tbl .bx-th{
+margin:0;
+padding:6px 0 6px 12px;
+}
+.af-tbl .bd-b-whi{
+border-bottom:1px dotted #FFF;
+}
+
+/* ================================= [ ここから以前のデータ ] */
+/*
+// ===============================
+// 				 基本パーツ
+// ===============================
+ */
+
+/* タイトル装飾 */
+.dot-sub {
+height:24px;
+margin:12px 0;
+border-bottom:1px dotted #363636;
+overflow:hidden;
+}
+.dot-sub p {
+line-height:24px;
+margin:0;
+padding:0 10px;
+font-size:14px;
+font-weight:bold;
+text-align:left;
+}
+.gl-sub{
+height:40px;
+margin-bottom:20px;
+background:#eeffe4;
+border:#d8e2d7 1px solid;
+}
+.gl-sub p{
+line-height:40px;
+margin:0;
+font-size:16px;
+font-weight:bold;
+text-align:center;
+color:#007200;
+}
+.bl-sub{
+height:38px;
+margin-bottom:20px;
+background:#f4f7f9;
+border-left:#5bb0e9 5px solid;
+}
+.bl-sub p{
+padding:11px 0 11px 25px;
+font-size:16px;
+font-weight:bold;
+color:#000;
+text-align:left;
+}
+
+.gry-sub{
+height:40px;
+margin-bottom:20px;
+background:#eeeeee;
+border:#a5a5a5 1px solid;
+}
+.gry-sub p{
+line-height:40px;
+margin:0;
+font-size:16px;
+font-weight:bold;
+text-align:center;
+}
+
+.yl-sub{
+height:40px;
+margin-bottom:20px;
+background:#ffffe0;
+border:#ededc1 1px solid;
+}
+.yl-sub p{
+padding:14px 0 14px 15px;
+font-size:16px;
+font-weight:bold;
+text-align:left;
+color:#000;
+}
+
+.yl-bx {
+padding:20px 0;
+border:#f7f6c8 2px solid;
+background:#fcfcf2 url(https://pics.dmm.com/p/affiliate/base/bg_ylbx.gif) repeat-x top left;
+text-align:center;
+}
+
+.bl-bx{
+width:455px;
+height:110px;
+background:#fcfcf2 url(https://pics.dmm.com/p/affiliate/base/bg_blbx.gif) no-repeat top left;
+text-align:center;
+}
+.bl-bx img{margin-top:30px;}
+
+
+/* 上ナビ */
+.mu-lnav {
+background: none repeat scroll 0 0 #242424;
+list-style: none outside none;
+margin: 0 0 12px;
+min-height: 22px;
+padding: 0 6px;
+position: relative;
+}
+.mu-lnav ul {
+margin: 0 80px 0 0;
+padding: 0;
+}
+.mu-lnav ul li {
+display: inline;
+float: left;
+margin: 0;
+padding: 0 6px 0 0;
+}
+.mu-lnav ul li a span, #header .hd-lnav ul li a span {
+background: url("https://p.dmm.com/p/navi/tx_new.gif") no-repeat scroll right 1px transparent;
+padding: 0 35px 0 0;
+}
+.mu-lnav ul li.on a {
+background-color: #C10000;
+color: #FFFFFF;
+}
+.mu-lnav ul li a {
+background: url("https://p.dmm.com/p/common/arrow_global.gif") no-repeat scroll 6px -100px transparent;
+color: #FFFFFF;
+display: block;
+font-weight: bold;
+line-height: 1;
+padding: 5px 9px 5px 17px;
+text-decoration: none;
+width: auto;
+}
+.mu-lnav ul li a img {
+margin: 0 0 0 4px;
+vertical-align: middle;
+}
+.mu-lnav ul li a:visited {
+color: #FFFFFF;
+}
+.mu-lnav ul li a:hover {
+background-color: #C10000;
+color: #FFFFFF;
+}
+.mu-lnav .sub-lnav {
+padding: 4px 10px 4px 0;
+position: absolute;
+right: 0;
+top: 0;
+}
+.mu-lnav .sub-lnav span {
+display: inline;
+float: left;
+line-height: 1.3;
+margin: 0 0 0 10px;
+padding: 0 0 0 10px;
+}
+.mu-lnav .sub-lnav span a {
+color: #FFFFFF;
+font-size: 10px;
+font-weight: bold;
+text-decoration: none;
+}
+#header .hd-lnav .sub-lnav span a.ico-offender{
+position: relative;
+top:0;
+padding-left: 15px;
+font-size:10px;
+background: url(https://pics.dmm.com/p/affiliate/base/ico_offender.gif) no-repeat left center;
+color: #eee;
+}
+#header .hd-lnav .sub-lnav span a.ico-offender:hover{
+color:#ccc;
+}
+#header .hd-lnav .sub-lnav span a.beginner {
+position: relative;
+top: 1px;
+padding-left: 15px;
+background: url(https://pics.dmm.com/p/affiliate/base/ico_beginner.gif) no-repeat left center;
+color: #eee;
+}
+#d-header .hd-lnav ul li a {
+    padding: 6px;
+}
+/* 右ナビ */
+#side-r {
+float: right;
+margin: 0;
+padding: 0;
+width: 250px;
+}
+#side-r .sb {
+border: 1px solid #BBBBBB;
+margin-bottom: 12px;
+}
+#side-r p.sbh {
+background: none repeat scroll 0 0 #242424;
+border-bottom: 1px solid #BBBBBB;
+color: #F8F8F8;
+font-size: 10px;
+font-weight: bold;
+padding: 0.2em 6px;
+}
+#side-r .sbs {
+margin: 6px;
+}
+.sbs ol {
+padding: 0 0 0 2.5em;
+}
+#side-r .rect-banner .sbs {
+margin: 2px;
+}
+#side-r .rect-banner .sbs p {
+margin: 0 6px;
+}
+/* inner-menu */
+div.wrap-inner-menu {
+    position: relative;
+    margin: 0 0 6px;
+    padding: 0;
+    background: #FFF;
+    border: #1B1B1B 6px solid;
+    z-index:999;
+}
+div.wrap-inner-menu ul#inner-menu {
+    margin: 6px 0;
+    padding: 0;
+    color: #333;
+}
+div.wrap-inner-menu ul#inner-menu > li {
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    background: url(https://pics.dmm.com/p/affiliate/base/ico_arrow_nav.gif) no-repeat 140px center;
+}
+div.wrap-inner-menu ul#inner-menu > li a {
+    display: block;
+    padding: 0;
+    color: #1A55B3;
+}
+div.wrap-inner-menu ul#inner-menu > .inner-menu-trigger .inner-menu-trigger_A{
+    display: block;
+    padding: 5px;
+    color: #1A55B3;
+}
+div.wrap-inner-menu ul#inner-menu > li .banner-list {
+    display:none;
+    position: absolute;
+    width: 170px;
+    padding: 0 6px;
+    top: -6px;
+    left: 153px;
+    border: #1B1B1B 6px solid;
+}
+div.wrap-inner-menu ul#inner-menu > li div ul {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+div.wrap-inner-menu ul#inner-menu > li div ul li {
+    padding: 0;
+    list-style: none;
+}
+div.wrap-inner-menu ul#inner-menu > li div ul li:hover {
+    background: #eee;
+}
+div.wrap-inner-menu ul#inner-menu > li div ul li a {
+    text-decoration: none;
+    color: #1a54b3;
+    font-size: 12px;
+    line-height: 20px;
+}
+/* 左ナビ */
+#side-l .smc {
+-moz-border-bottom-colors: none;
+-moz-border-image: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+background: none repeat scroll 0 0 #F8F8F8;
+border-color: #1B1B1B;
+border-style: solid;
+border-width: 0 6px 6px;
+margin: 0 0 12px;
+padding: 0 0 6px;
+}
+#side-l .smc strong {
+display: block;
+font-weight: normal;
+margin: 4px 0;
+}
+#side-l .smc p.smh {
+background: none repeat scroll 0 0 #242424;
+margin: 0;
+padding: 8px 0 4px;
+text-align: left;
+}
+#side-l .smc .sms {
+margin: 0;
+padding: 0;
+}
+#side-l .smc .sms ul li {
+border-top: 1px solid #242424;
+margin: 0;
+padding: 10px 6px;
+}
+#side-l .smc .sms ul li a {
+color: #1A55B3;
+text-decoration: none;
+}
+#side-l .smc .sms ul li a:visited {
+color: #8F1485;
+}
+#side-l .smc .sms ul li a:hover {
+color: #DF0331;
+text-decoration: underline;
+}
+#side-l .smc .sms ul li ul li {
+background-position: 0 9px;
+border: medium none;
+margin: 0 0 4px 5px;
+padding: 2px 0 2px 7px;
+}
+#side-l .smc p.back-link {
+background: none repeat scroll 0 0 transparent;
+border-top: 1px dotted #A7A7A7;
+margin: 3px 6px;
+padding: 6px 3px 0 1px;
+text-align: left;
+}
+#side-l .smc p.back-link a {
+background: url("https://p.dmm.com/p/common/arrow_global.gif") no-repeat scroll left 3px transparent;
+font-weight: normal;
+padding-left: 10px;
+}
+#side-l .sm {
+border: 1px solid #BBBBBB;
+margin-bottom: 12px;
+}
+#side-l p.smh {
+background: none repeat scroll 0 0 #242424;
+color: #F8F8F8;
+font-size: 10px;
+font-weight: bold;
+margin: 0;
+padding: 0.2em 6px;
+}
+#side-l .sms {
+margin: 6px;
+}
+
+.navi-r {
+width: 500px;
+}
+.navi-r ul {
+float: right;
+list-style: none outside none;
+margin: 0;
+padding: 0;
+text-align: right;
+}
+.navi-r ul li {
+float: left;
+white-space: nowrap;
+}
+.navi-r ul li span {
+background-color: #F4F4F4;
+border: 1px solid #999999;
+color: #000000;
+display: block;
+font-size: 13px;
+font-weight: bold;
+line-height: 1.6em;
+margin: 0 4px 0 0;
+text-align: center;
+text-decoration: none;
+width: 34px;
+}
+.dot {
+color: #000000;
+display: block;
+font-size: 13px;
+line-height: 1.8em;
+margin: 0 4px 0 0;
+text-align: center;
+width: 12px;
+}
+.navi-r li a:link, .navi-r li a:visited {
+background-color: #FFFFFF;
+border: 1px solid #999999;
+color: #003399;
+display: block;
+font-size: 13px;
+line-height: 1.6em;
+margin: 0 4px 0 0;
+text-align: center;
+text-decoration: none;
+width: 34px;
+}
+.navi-r li a:hover {
+background-color: #003399;
+color: #FFFFFF;
+}
+.navi-r ul li.txt-link {
+float: left;
+}
+.navi-r li.txt-link a:link, .navi-r li.txt-link a:visited {
+background-color: #FFFFFF;
+border: 1px solid #999999;
+color: #003399;
+display: block;
+font-size: 13px;
+line-height: 1.6em;
+margin: 0 4px 0 0;
+text-align: center;
+text-decoration: none;
+width: 95px;
+}
+.navi-r li.txt-link a:hover {
+background-color: #003399;
+color: #FFFFFF;
+}
+.navi-r ul li.large {
+float: left;
+}
+.navi-r li.large a:link, .navi-r li.large a:visited {
+background-color: #FFFFFF;
+border: 1px solid #999999;
+color: #003399;
+display: block;
+font-size: 13px;
+line-height: 1.6em;
+margin: 0 4px 0 0;
+text-align: center;
+text-decoration: none;
+width: 34px;
+}
+.navi-r li.large a:hover {
+background-color: #003399;
+color: #FFFFFF;
+}
+/* お問い合わせ */
+.af-lnav-link a{
+display:block;
+padding-left: 10px;
+background: url(https://p.dmm.com/p/common/arrow_common.gif) no-repeat left 5px;
+font-weight: normal;
+zoom: 1;
+}
+
+/*
+// ===============================
+// 					 #5　汎用系
+// ===============================
+ */
+
+.w40{width:40%}
+.w20{width:20%}
+.w730p{width:730px}
+.w750p{width:750px}
+
+#w .mg-20{margin:20px}
+#w .mg-r20{margin-right:20px}
+#w .mg-l20{margin-left:20px}
+
+#w .mg-t30{margin-top:30px}
+#w .mg-b30{margin-bottom:30px}
+
+#w .pd-20{padding:20px}
+#w .pd-t20{padding-top:20px}
+#w .pd-r20{padding-right:20px}
+#w .pd-b20{padding-bottom:20px}
+
+.bd-b-dot{border-bottom:1px #000 dotted}
+
+.bg-bla{background:#1b1b1b}
+
+.arrow-gra{
+padding-left:10px;
+background:url(https://pics.dmm.com/p/affiliate/base/ico_arrow_gra.gif) no-repeat left center;
+}
+
+/* ================================= [ capt ] */
+.capt01-af {
+height:36px;
+margin-bottom:12px;
+background:url(/images/affiliate_new/base/bg_capt01-af.gif) no-repeat 10px center #F2F2F2;
+}
+.capt01-af p {
+line-height:36px;
+padding-left:35px;
+font-family:"メイリオ", Meiryo;
+font-size:14px;
+font-weight:bold;
+}
+.capt02-af {
+min-height: 1%;
+line-height:30px;
+margin-bottom:12px;
+padding-left:6px;
+font-family:"メイリオ", Meiryo;
+border-bottom:1px dotted #363636;
+font-size:14px;
+font-weight: bold;
+}
+.sect01-af {
+min-height: 1%;
+line-height:1.4;
+margin-bottom:50px;
+}
+
+
+/* ========================================== [ base-tbl ] */
+.base-tbl {
+background: #ccc;
+}
+.base-tbl th {
+padding: 12px;
+background:#242424;
+color: #FFF;
+}
+.base-tbl td {
+height: 28px;
+padding: 8px;
+background: #e0e0e0;
+}
+
+/* ================================= [ base-tbl td-color ] */
+.base-tbl .odd ,
+.base-tbl .odd td {
+background: #f4f4f4;
+}
+.base-tbl .tbl-hl ,
+.base-tbl .odd .tbl-hl {
+background:#f4f4f4;
+font-weight: bold;
+}
+
+.base-tbl .cl-blu td {
+background: #cfeaff;
+}
+.base-tbl .cl-blu-odd td {
+background: #edf7ff;
+}
+
+.base-tbl .cl-ylw td {
+background: #fdfdb9;
+}
+.base-tbl .cl-ylw-odd td {
+background: #fffff2;
+}
+
+.base-tbl .cl-red td {
+background: #ffbabc;
+}
+.base-tbl .cl-red-odd td {
+background: #ffebec;
+}
+.base-tbl .cl-red .tbl-hl ,
+.base-tbl .cl-red-odd .tbl-hl {
+background: #a20000;
+}
+
+.base-tbl td.cl-blu {
+background: #cfeaff;
+}
+.base-tbl .odd td.cl-blu {
+background: #edf7ff;
+}
+.base-tbl td.cl-blu-sum {
+background: #bfceff;
+}
+.base-tbl .odd td.cl-blu-sum {
+background: #dbe3ff;
+}
+.base-tbl td.cl-ylw {
+background: #fffff2;
+}
+.base-tbl .odd td.cl-ylw {
+background: #fdfdb9;
+}
+.base-tbl td.cl-red {
+background: #ffbabc;
+}
+.base-tbl .odd td.cl-red {
+background: #ffebec;
+}
+
+.base-tbl th.tbl-hl-blue {
+background: #bbeafc;
+color:#333;
+}
+
+.base-tbl .bx-th{
+margin:0;
+padding:6px 0 6px 12px;
+}
+.base-tbl .bd-b-whi{
+border-bottom:1px dotted #FFF;
+}
+
+/*
+// ===============================
+// 					 #6　特定ページ系
+// ===============================
+ */
+
+/* ========================= [ bx-point-chk ] */
+.bx-point-chk{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.bx-point-chk li{
+	margin-bottom:24px;
+}
+.bx-point-chk li p.hl{
+	margin-bottom:10px;
+}
+.bx-point-chk li p{
+	margin:0;
+}
+/*
+// ===============================
+// 					 #7　メンバー追加CSS
+// ===============================
+ */
+ /* ================================= [ .af-headline_s] */
+#w .af-headline_s {
+padding-left: 4px;
+padding-bottom: 2px;
+border-bottom: 2px #303030 solid;
+font-size: 20px;
+font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+font-weight: normal;
+background:url("https://pics.dmm.com/p/affiliate/base/bg_headline_s.gif") no-repeat right bottom;
+}
+#w .af-headline_s span.af-txten {
+margin-left: 6px;
+font-size: 10px;
+font-weight: normal;
+color:#999;
+}
+.bt-wrapper{
+width:100%;
+height:65px;
+background:url(https://pics.dmm.com/p/affiliate/member/bg_btn.gif)  no-repeat center top;
+}
+.bt-wrapper ul{
+display:block;
+width:730px;
+height:65px;
+margin:0 auto;
+padding:0;
+}
+.bt-wrapper ul li{
+width:181px;
+height:60px;
+margin-top:5px;
+float:left;
+list-style:none;
+display:block;
+}
+.bt-wrapper ul li a{
+display:block;
+width:181px;
+height:60px;
+}
+.bt-wrapper ul li span{
+	position:relative;
+	z-index:-1;
+}
+.bt-wrapper ul li:not(:last-child){
+	margin-right:2px;
+}
+.bt-wrapper ul li.btn1 {background:url(https://pics.dmm.com/p/affiliate/member/btn-top.gif)  no-repeat left bottom;}
+.bt-wrapper ul li.btn1 a{background:url(https://pics.dmm.com/p/affiliate/member/btn-top.gif)  no-repeat left top;}
+.bt-wrapper ul li.btn1 a:hover{background:url(https://pics.dmm.com/p/affiliate/member/btn-top.gif)  no-repeat left center;}
+
+.bt-wrapper ul li.btn2 {background:url(https://pics.dmm.com/p/affiliate/member/btn-pay.gif)  no-repeat left bottom;}
+.bt-wrapper ul li.btn2 a{background:url(https://pics.dmm.com/p/affiliate/member/btn-pay.gif)  no-repeat left top;}
+.bt-wrapper ul li.btn2 a:hover{background:url(https://pics.dmm.com/p/affiliate/member/btn-pay.gif)  no-repeat left center;}
+
+.bt-wrapper ul li.btn3 {background:url(https://pics.dmm.com/p/affiliate/member/btn-service.gif)  no-repeat left bottom;}
+.bt-wrapper ul li.btn3 a{background:url(https://pics.dmm.com/p/affiliate/member/btn-service.gif)  no-repeat left top;}
+.bt-wrapper ul li.btn3 a:hover{background:url(https://pics.dmm.com/p/affiliate/member/btn-service.gif)  no-repeat left center;}
+
+.bt-wrapper ul li.btn4 {background:url(https://pics.dmm.com/p/affiliate/member/btn-mono.gif)  no-repeat left bottom;}
+.bt-wrapper ul li.btn4 a{background:url(https://pics.dmm.com/p/affiliate/member/btn-mono.gif)  no-repeat left top;}
+.bt-wrapper ul li.btn4 a:hover{background:url(https://pics.dmm.com/p/affiliate/member/btn-mono.gif)  no-repeat left center;}
+
+#calendar-wrapper{
+	width:730px;
+	height:auto;
+}
+#calendar-value{
+	position:relative;
+	width:730px;
+	height:36px;
+	font-weight:bold;
+	font-size:13px;
+	background:url(https://pics.dmm.com/p/affiliate/member/bg_calendar_btn.gif)  no-repeat left center;
+}
+#calendar-value a.report-time{
+display:block;
+position:absolute;
+height:26px;
+width:221px;
+line-height:26px;
+margin:0;
+padding:0 0 0 10px;
+top:5px;
+left:229px;
+color:#000;
+background:url(https://pics.dmm.com/p/affiliate/member/bg-calendar-time.gif)  no-repeat left top;
+}
+#calendar-value a.report-time:hover{
+text-decoration:none;
+color:#000;
+background:url(https://pics.dmm.com/p/affiliate/member/bg-calendar-time.gif)  no-repeat left bottom;
+}
+#calendar-value a.report-id{
+display:block;
+position:absolute;
+height:26px;
+width:161px;
+line-height:26px;
+margin:0;
+padding:0 0 0 10px;
+top:5px;
+left:529px;
+color:#000;
+background:url(https://pics.dmm.com/p/affiliate/member/bg-calendar-id.gif)  no-repeat left top;
+}
+#calendar-value a.report-id:hover{
+text-decoration:none;
+color:#000;
+background:url(https://pics.dmm.com/p/affiliate/member/bg-calendar-id.gif)  no-repeat left bottom;
+}
+.calendar-content{
+	height:auto;
+	width:690px;
+	padding:20px;
+	background-color:#f5f5f5;
+	border-top:1px #fff solid;
+	overflow:hidden;
+	}
+/* ================================= [ calendar ] */
+#datepicker{
+float:left;
+font-size:12px;
+}
+ul#calendar-set-up{
+list-style:none;
+line-height:1.4;
+padding:0;
+}
+ul#calendar-set-up li{
+margin-bottom:10px;
+margin-left:472px;
+}
+ul#calendar-set-up{
+list-style:none;
+margin:0;
+padding:0;
+}
+#from_date,#to_date{
+padding:2px;
+font-size:12px;
+width:65px;
+}
+#calendar-set-up input:focus{
+	background-color: #eff9ff;
+}
+#af-id{
+	width:210px;
+	height:22px;
+	padding-left:2px;
+}
+ul#calendar-set-up li>span{
+	font-weight:bold;
+	font-size:14px;
+}
+p.dater-box{
+	display:block;
+	padding:5px;
+	margin:0;
+	line-height:1.5;
+	background:#FFF;
+	border:solid 1px #CCC;
+	}
+.mg-r5{
+	margin-right:5px;
+}
+/* ================================= [page tab ] */
+ul#tab-s-menu,ul#tab-s-menu1,ul#tab-s-menu2,ul#tab-s-menu3,ul#tab-s-menu4{
+	width:100%;
+	display:block;
+	text-align:left;
+	overflow:hidden;
+	margin:40px 0 0 0;
+	padding:0;
+}
+ul#tab-s-menu li,ul#tab-s-menu1 li,ul#tab-s-menu2 li,ul#tab-s-menu3 li,ul#tab-s-menu4 li{
+	list-style:none;
+	float:left;
+	text-align:left;
+	margin:0;
+	padding:0;
+}
+#tab-s-contents-wrap,#tab-s-contents-wrap1,#tab-s-contents-wrap2,#tab-s-contents-wrap3,#tab-s-contents-wrap4{
+	position:relative;
+	width:100%;
+	margin-bottom:20px;
+}
+.bg-pale-blue{background:#f4f7f9;}
+.bg-white{background:#fff;}
+.tab-com-box{
+	display:block;
+	height:auto;
+	text-align:center;
+	padding:20px 5px;
+	border-top:#006388 solid 5px;
+	overflow:hidden;
+}
+.tab-cojp-box{
+	display:none;
+	height:auto;
+	text-align:center;
+	padding:20px 5px;
+	border-top:#c10000 solid 5px;
+	overflow:hidden;
+}
+.tab-com a{
+	display:block;
+	height:36px;
+	width:130px;
+	background:url(https://pics.dmm.com/p/affiliate/member/tab-s-com-off.gif) no-repeat left top;
+}
+.tab-com a.selected{
+	display:block;
+	height:36px;
+	width:130px;
+	background:url(https://pics.dmm.com/p/affiliate/member/tab-s-com.gif) no-repeat left top;
+}
+.tab-cojp a{
+	display:block;
+	height:36px;
+	width:130px;
+	background:url(https://pics.dmm.com/p/affiliate/member/tab-s-r18-off.gif) no-repeat left top;
+}
+.tab-cojp a.selected{
+	display:block;
+	height:36px;
+	width:130px;
+	background:url(https://pics.dmm.com/p/affiliate/member/tab-s-r18.gif) no-repeat left top;
+}
+.tab-cojp a span,.tab-com a span{
+	position:relative;
+	z-index:-1;
+}
+.tab-contents{
+	position:relative;
+	width:auto;
+	height:auto;
+	padding:20px 0 0;
+}
+
+.btn-report{
+	position:absolute;
+	right:0;
+	top:-35px;
+	}
+	/* ========================= [ #tab-day ] */
+#tab-day-menu1,#tab-day-menu2,#tab-day-menu3,#tab-day-menu4{
+	position:absolute;
+	display:block;
+	font-weight:bold;
+	width:auto;
+	height:35px;
+	text-align:left;
+	margin:0 5px;
+	padding:0;
+	z-index:10;
+	top:20px;
+	left:0;
+	border-top:#333 1px solid;
+	border-left:#333 1px solid;
+	border-right:#333 1px solid;
+}
+#tab-day-menu1 li,#tab-day-menu2 li,#tab-day-menu3 li,#tab-day-menu4 li{
+	list-style:none;
+	float:left;
+	text-align:center;
+	margin:0;
+	padding:0;
+	height:35px;
+	min-width:85px;
+	line-height:35px;
+	background:#333;
+}
+#tab-day-menu1 li:not(:last-child),#tab-day-menu2 li:not(:last-child),#tab-day-menu3 li:not(:last-child),#tab-day-menu4 li:not(:last-child){
+	border-right:#FFF 1px solid;
+}
+#tab-day-menu1 li a,#tab-day-menu2 li a,#tab-day-menu3 li a,#tab-day-menu4 li a{
+	display:block;
+	color:#FFF;
+	min-width:85px;
+	height:35px;
+	text-align:center;
+}
+#tab-day-menu1 li a.selected,#tab-day-menu2 li a.selected,#tab-day-menu3 li a.selected,#tab-day-menu4 li a.selected{
+	list-style:none;
+	float:left;
+	height:36px;
+	line-height:36px;
+	color:#333;
+	background:#fff;
+}
+#tab-day-wrap1,#tab-day-wrap2,#tab-day-wrap3,#tab-day-wrap4{
+	width:auto;
+	height:auto;
+	margin:35px 5px 0;
+	background:#fff;
+	z-index:1;
+}
+.tab-day2-box{
+	display:block;
+	width:auto;
+	padding:30px 15px;
+	text-align:center;
+	border:#ddd solid 1px;
+}
+.tab-day1-box,.tab-day3-box,.tab-day4-box{
+	display:none;
+	width:auto;
+	text-align:center;
+	padding:30px 15px;
+	border:#ddd solid 1px;
+}
+/* ================================= [ table ] */
+.w720p{width:720px;}
+.w710p{width:710px;}
+.w690p{width:690px;}
+.w680p{width:680px;}
+.w10per{width:10%;}
+.w15per{width:15%;}
+.w20per{width:20%;}
+.w25per{width:25%;}
+.w30per{width:30%;}
+.w35per{width:35%;}
+.w40per{width:40%;}
+.w45per{width:45%;}
+.w60per{width:60%;}
+.w70per{width:70%;}
+.mg-0auto{margin:0 auto;}
+.mg-2auto{margin:0 auto;}
+.lh14{line-height:1.4;}
+.lh16{line-height:1.6;}
+.bg-red{background-color:#c10000;}
+.pd-0{	padding:0;}
+.base-tbl-white .odd-red ,
+.base-tbl-white .odd-red td {
+background: #ffefef;}
+/* ========================================== [ base-tbl-white ] */
+.base-tbl-white {
+background: #ccc;
+}
+.base-tbl-white th {
+padding: 10px 5px;
+background:#242424;
+color: #FFF;
+}
+.b-14{
+	font-size:14px;
+	font-weight:bold;
+}
+.b-12{
+	font-size:12px;
+	font-weight:bold;
+}
+.base-tbl-white td {
+height: 28px;
+padding:10px 5px;
+background: #efefef;
+text-align:right;
+}
+.base-tbl-white .odd ,
+.base-tbl-white .odd td {
+background: #fff;
+}
+.base-tbl-white .tbl-hl ,
+.base-tbl-white .odd .tbl-hl {
+background:#f4f4f4;
+font-weight: bold;
+}
+.base-tbl-white .cl-blu td {
+background: #cfeaff;
+}
+.base-tbl-white .cl-blu-odd td {
+background: #edf7ff;
+}
+.base-tbl-white .cl-ylw td {
+background: #fdfdb9;
+}
+.base-tbl-white .cl-ylw-odd td {
+background: #fffff2;
+}
+.base-tbl-white .cl-red td {
+background: #ffbabc;
+}
+.base-tbl-white .cl-red-odd td {
+background: #ffebec;
+}
+.base-tbl-white .cl-red .tbl-hl ,
+.base-tbl-white .cl-red-odd .tbl-hl {
+background: #a20000;
+}
+.base-tbl-white td.cl-blu {
+background: #cfeaff;
+}
+.base-tbl-white .odd td.cl-blu {
+background: #edf7ff;
+}
+.base-tbl-white td.cl-blu-sum {
+background: #bfceff;
+}
+.base-tbl-white .odd td.cl-blu-sum {
+background: #dbe3ff;
+}
+.base-tbl-white td.cl-ylw {
+background: #fffff2;
+}
+.base-tbl-white .odd td.cl-ylw {
+background: #fdfdb9;
+}
+.base-tbl-white td.cl-red {
+background: #ffbabc;
+}
+.base-tbl-white .odd td.cl-red {
+background: #ffebec;
+}
+.base-tbl-white th.tbl-hl-blue {
+background: #bbeafc;
+color:#333;
+}
+.base-tbl-white .bx-th{
+margin:0;
+padding:6px 0 6px 0;
+}
+.base-tbl-white .bd-b-whi{
+border-bottom:1px dotted #FFF;
+}
+/* ================================= [ pop-up ] */
+.popup-txt-link dl dt{
+	margin:0 0 5px 0;
+	font-weight:bold;
+}
+.popup-txt-link dl dd{
+margin:0;
+padding:5px;
+display:block;
+width:300px;
+line-height:1.4;
+border:#CCC 1px solid;
+}
+/* ================================= [ bt-pay-change ] */
+#dfriend-box{
+	position:relative;
+	width:730px;
+	margin:79px 0;
+	padding:10px 0 30px;
+	background:#F4F7F9;
+	z-index:1;
+}
+ul.bt-pay-change{
+position:absolute;
+top:-40px;
+width:735px;
+list-style:none;
+padding:0;
+margin:0;
+overflow:hidden;
+z-index:10;
+}
+ul.bt-pay-change li{
+	float:left;
+	height:49px;
+	width:178px;
+    margin-right:6px;
+}
+ul.bt-pay-change li:last-child{
+	margin-right:0;
+}
+ul.bt-pay-change li.dfriend a, ul.bt-pay-change li.sfirst a, ul.bt-pay-change li.drct a, ul.bt-pay-change li.ctgr a{
+	display:block;
+	height:40px;
+	width:178px;
+}
+ul.bt-pay-change li.dfriend,ul.bt-pay-change li.dfriend a:hover{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-dfriend-on_2.gif)  no-repeat left top;
+}
+ul.bt-pay-change li.dfriend a{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-dfriend_2.gif)  no-repeat left top;
+}	
+ul.bt-pay-change li.sfirst,ul.bt-pay-change li.sfirst a:hover{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-sfirst-on.gif)  no-repeat left top;
+}
+ul.bt-pay-change li.sfirst a{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-sfirst.gif)  no-repeat left top;
+}
+ul.bt-pay-change li.drct,ul.bt-pay-change li.drct a:hover{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-drct-on_2.gif)  no-repeat left top;
+}
+ul.bt-pay-change li.drct a{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-drct_2.gif)  no-repeat left top;
+}
+ul.bt-pay-change li.ctgr,ul.bt-pay-change li.ctgr a:hover{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-ctgr-on_2.gif)  no-repeat left top;
+}
+ul.bt-pay-change li.ctgr a{
+height:49px;
+background:url(https://pics.dmm.com/p/affiliate/member/tab-pay-ctgr_2.gif)  no-repeat left top;
+}
+ul.bt-pay-change li.dfriend span, ul.bt-pay-change li.sfirst span, ul.bt-pay-change li.drct span, ul.bt-pay-change li.ctgr span{
+	position:relative;
+	z-index:-1;
+}
+.back_page{
+font-size:14px;
+padding-left:20px;
+background:url(https://pics.dmm.com/p/affiliate/base/ico_back.gif)  no-repeat left top;
+}
+/*
+// ===============================
+// 				 webAPI基本パーツ
+// ===============================
+*/
+/* 左ナビ */
+#side-l ul.regist_api{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.regist_txt{
+	padding-left:10px;
+	background: url("https://p.dmm.com/p/common/arrow_global.gif") 0 -317px no-repeat;
+}
+.api-menu {
+	margin: 0;
+	padding: 5px 0 0;
+	border-color: #1B1B1B;
+	border-style: solid;
+	border-width: 0 6px 0;
+	background: none repeat scroll 0 0 #F8F8F8;
+}
+.api-menu p {
+	height:25px;
+	margin: 0;
+	padding: 0 0 0 6px;
+	line-height:25px;
+	color: #C10000;
+	font-weight: bold;
+	text-align: left;
+}
+.api-menu ul {
+	margin:0;
+	padding:0;
+}
+.api-menu ul li{
+	list-style: none outside none;
+	height:25px;
+	line-height:25px;
+	padding:0 6px 0 20px;
+	background: url("https://pics.dmm.com/p/affiliate/web_service/bg_api_left_navi.gif") no-repeat;
+}
+.api-menu ul li a{
+	display:block;
+	height:25px;
+	line-height:25px;
+}
+/* ================================= [ .api-page ] */
+#w #api-page{
+	background:url("https://pics.dmm.com/p/affiliate/web_service/bg_middle_page.gif") repeat-y center top #f2f2f2;
+	font-family:'ヒラギノ角ゴ Pro','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+#w #api-content{
+	width:730px;
+	margin:0 auto 10px;
+	padding:6px 12px;
+}
+.contents_top{
+	padding: 20px 0 0 0;
+	background:url("https://pics.dmm.com/p/affiliate/web_service/bg_contents_top.gif") no-repeat center bottom #f2f2f2;
+	text-align:center;
+}
+.contents_bottom{
+	padding: 0 0 20px 0;
+	background:url("https://pics.dmm.com/p/affiliate/web_service/bg_contents_bottom.gif") no-repeat center top #f2f2f2;
+	text-align:center;
+}
+.api-area{
+	margin-bottom:40px;
+}
+/* ================================= [ .api-capt ] */
+.api-capt{
+	border-bottom:2px dotted #000;
+}
+.api-capt01{
+	width:706px;
+	margin:25px 0 0;
+	padding:10px 0 10px 20px;
+	border-left:4px solid #39bbff;
+}
+.api-capt02{
+	width:720px;
+	height:35px;
+	line-height:35px;
+	margin-bottom:20px;
+	padding-left:10px;
+	font-size:18px;
+	font-weight:bold;
+	background-color:#e1e9f2;
+}
+.api-capt03{
+	width:711px;
+	margin:0 0 15px;
+	padding:5px 0 5px 15px;
+	border-left:4px solid #000;
+	font-size:18px;
+	font-weight:bold;
+}
+p.tx14.api-capt04 img {
+    	margin-bottom: 6px;
+    	margin-right: 6px;
+}
+/* ================================= [ .api_attention ] */
+dl.api_attention{
+	margin:0;
+	padding:0;
+	border:#000 solid 1px;
+}
+dl.api_attention dt{
+	padding:5px 15px;
+	color:#FFF;
+	background:#000;
+}
+dl.api_attention dd{
+	margin:0;
+	padding:12px;
+	background:#f7f7f7;
+}
+/* ================================= [ .api_txt ] */
+dl.api_txt{
+	margin:0;
+	padding:0;
+}
+dl.api_txt dt{
+	padding:0 0 0 15px;
+	color:#000;
+	background:url("https://pics.dmm.com/p/affiliate/web_service/ico_arrow01.gif") no-repeat left center;
+	font-size:16px;
+	font-weight:bold;
+}
+dl.api_txt dd{
+	margin:10px 0 20px;
+	padding:0;
+}
+/* ================================= [ .regist_box ] */
+.regist_box{
+	margin:0 auto 40px;
+	padding:20px 0;
+	text-align:center;
+	background-color:#e1e9f2;
+}
+dl.regist_box{
+	display:block;
+	margin:0 auto 40px;
+}
+.regist_box dt{
+	font-size:20px;
+	letter-spacing:2px
+}
+.regist_box dd{
+	width:670px;
+	margin:15px auto 0;
+	padding:10px;
+	background:#FFF;
+	font-size:30px;
+	letter-spacing:5px;
+	box-shadow: 0 1px 4px 1px rgba(0,0,0,0.2) inset;
+}
+/* ================================= [ .txt_reference ] */
+dl.txt_reference{
+	float:left;
+	line-height:1.8;
+	padding:15px;
+	margin-top:0;
+	margin-bottom:30px;
+	display:block;
+	width:320px;
+	height:210px;
+	background-color:#f2f2f2;
+}
+dl.txt_reference dt{
+	padding-bottom:10px;
+	margin-bottom:10px;
+	border-bottom:1px  dotted #333;
+}
+dl.txt_reference dd{
+	margin:0;
+	padding:0;
+}
+/* ================================= [ .api_process ] */
+dl.api_process{
+	margin:0 0 40px 0;
+	padding:0;
+	}
+dl.api_process dt{
+	font-size:16px;
+	margin-bottom:10px;
+	padding:5px 0 5px 25px;
+	font-weight:bold;
+}
+dl.api_process dd{
+	margin:0 0 20px;
+	line-height:1.8;
+	padding:15px;
+	background:#f7f7f7;
+}
+/* ================================= [ .service_navi ] */
+ul.service_navi{
+	border-top:#000 1px dotted;
+	border-bottom:#000 1px dotted;
+	overflow:hidden;
+	padding:5px 0;
+	margin:0 0 30px 0;
+	}
+ul.service_navi li{
+	list-style:none;
+	float:left;
+	padding:0 0 0 12px;
+	margin-right:20px;
+	}
+ul.service_navi li a{
+	display:block;
+	padding-top:1px;
+	}
+/* ================================= [ .api_txt ] */
+.lh18{
+	line-height:1.8;
+}
+.tx11{
+	font-size:11px;
+	}
+.tx12{
+	font-size:12px;
+}
+.red{
+	color:#c10000;
+}
+.blue{
+	color:#1a6dcb;
+}
+.bd-gre{
+	border:#999 solid 1px;
+	}
+.mg-r30{
+margin-right:30px;
+}
+.of-hd{
+	overflow:hidden;
+}
+/* ================================= [ .api_reference ] */
+.request_url{
+	margin:0 0 20px;
+	line-height:1.8;
+	padding:15px;
+	background:#f7f7f7;
+	border:#555 1px solid;
+}
+
+.parameter-table{
+	width:730px;
+	background: #fff;
+	border-collapse:collapse;
+	border: 1px #000 solid;
+	margin-bottom:40px;
+	line-height:1.4;
+	font-size:12px;
+}
+.w125{width:125px;}
+.w160{width:160px;}
+.w200{width:200px;}
+.w95{width:95px;}
+.w20{width:20px;}
+
+.parameter-table tr:nth-child(odd){
+	background: #f2f2f2;
+}
+.parameter-table th{
+	font-size:14px;
+	font-weight:normal;
+	padding: 10px 10px;
+	border: 1px #000 solid;
+}
+.parameter-table th:nth-child(-n+5){
+	border-right:1px solid #ccc;
+}
+.parameter-table .api_circle{
+	font-size:20px;
+	text-align:center;
+	}
+.parameter-table td{
+	padding: 5px 5px;
+	border: 1px #333 solid;
+}
+.parameter-table th.hl {
+	background: #000;
+	color:#fff;
+	text-align:center;
+	white-space: nowrap;
+}
+.parameter-table th.subhead {
+	background: #aaa;
+}
+.sample_res_box{
+width:710px;
+height:200px;
+overflow:scroll;
+overflow-x: hidden;
+padding:10px;
+border:#555 1px solid;
+font-size:11px;
+line-height:1;
+}
+.api_bt_box{
+	width:730px;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	font-size:14px;
+	font-weight:bold;
+}
+.api_bt_box li{
+	float:left;
+	width:145px;
+	height:45px;
+	line-height:45px;
+	margin:0 1px 0 0;
+	padding:0;
+	text-align:center;
+	list-style:none;
+	background:url("https://pics.dmm.com/p/affiliate/web_service/reference/bg_bt_api_on.gif") no-repeat left center;
+}
+.api_bt_box li a{
+	display:block;
+	width:145px;
+	height:45px;
+	line-height:45px;
+	margin:0;
+	padding:0;
+	text-align:center;
+	color:#333;
+	font-weight:bold;
+	background:url("https://pics.dmm.com/p/affiliate/web_service/reference/bg_bt_api.gif") no-repeat left center;
+}
+.api_bt_box li.on a{
+	background:url("https://pics.dmm.com/p/affiliate/web_service/reference/bg_bt_api_on.gif") no-repeat left center;
+	text-decoration:none;
+}
+.api_bt_box li a:hover{
+	background:url("https://pics.dmm.com/p/affiliate/web_service/reference/bg_bt_api_on.gif") no-repeat left center;
+		text-decoration:none;
+}
+.pd-t10{
+	padding-top:10px;
+	}
+
+/* ================================= [ .icon ] */
+.ico_black{background:url("https://pics.dmm.com/p/affiliate/web_service/ico_black.gif") no-repeat left center;}
+.ico_arrow01{background:url("https://pics.dmm.com/p/affiliate/web_service/ico_arrow01.gif") no-repeat left center;}
+.ico_red{background:url("https://pics.dmm.com/p/affiliate/web_service/ico_red.gif") no-repeat left center;}
+.ico_top{	background:url("https://pics.dmm.com/p/affiliate/web_service/ico_top.gif") no-repeat left center;	}
+.ico_bottom{	background:url("https://pics.dmm.com/p/affiliate/web_service/ico_bottom.gif") no-repeat left center;	}
