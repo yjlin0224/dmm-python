@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "actress_search",
+  "$ref": "#/$defs/DMMActressSearchResponseBody",
+  "$defs": {
+    "DMMActressSearchResponseBody": {
+      "title": "DMMActressSearchResponseBody",
+      "type": "object",
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/DMMResponseBodyRequest"
+        },
+        "result": {
+          "$ref": "#/$defs/DMMActressSearchResponseBodyResult"
+        }
+      },
+      "required": [
+        "request",
+        "result"
+      ]
+    },
+    "DMMResponseBodyRequest": {
+      "title": "DMMResponseBodyRequest",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "DMMActressSearchResponseBodyResult": {
+      "title": "DMMActressSearchResponseBodyResult",
+      "type": "object",
+      "properties": {
+        "result_count": {
+          "type": "integer"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "first_position": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "total_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "actress": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMActressSearchResponseBodyResultActress"
+          }
+        }
+      },
+      "required": [
+        "result_count",
+        "status",
+        "first_position",
+        "total_count"
+      ]
+    },
+    "DMMActressSearchResponseBodyResultActress": {
+      "title": "DMMActressSearchResponseBodyResultActress",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ruby": {
+          "type": "string"
+        },
+        "cup": {
+          "type": "string"
+        },
+        "birthday": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "blood_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hobby": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prefectures": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "imageURL": {
+          "$ref": "#/$defs/DMMActressImageURL"
+        },
+        "listURL": {
+          "$ref": "#/$defs/DMMActressListURL"
+        },
+        "bust": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "waist": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hip": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "ruby",
+        "birthday",
+        "blood_type",
+        "hobby",
+        "prefectures",
+        "listURL",
+        "bust",
+        "waist",
+        "hip",
+        "height"
+      ]
+    },
+    "DMMActressImageURL": {
+      "title": "DMMActressImageURL",
+      "type": "object",
+      "properties": {
+        "small": {
+          "type": "string"
+        },
+        "large": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "small",
+        "large"
+      ]
+    },
+    "DMMActressListURL": {
+      "title": "DMMActressListURL",
+      "type": "object",
+      "properties": {
+        "digital": {
+          "type": "string"
+        },
+        "monthly": {
+          "type": "string"
+        },
+        "mono": {
+          "type": "string"
+        },
+        "ppm": {
+          "type": "string"
+        },
+        "rental": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "digital",
+        "monthly",
+        "mono"
+      ]
+    }
+  }
+}

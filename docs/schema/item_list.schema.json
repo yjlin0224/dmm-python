@@ -1,0 +1,562 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "item_list",
+  "$ref": "#/$defs/DMMItemListResponseBody",
+  "$defs": {
+    "DMMItemListResponseBody": {
+      "title": "DMMItemListResponseBody",
+      "type": "object",
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/DMMResponseBodyRequest"
+        },
+        "result": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResult"
+        }
+      },
+      "required": [
+        "request",
+        "result"
+      ]
+    },
+    "DMMResponseBodyRequest": {
+      "title": "DMMResponseBodyRequest",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "DMMItemListResponseBodyResult": {
+      "title": "DMMItemListResponseBodyResult",
+      "type": "object",
+      "properties": {
+        "result_count": {
+          "type": "integer"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "first_position": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "total_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItem"
+          }
+        }
+      },
+      "required": [
+        "result_count",
+        "status",
+        "first_position",
+        "total_count",
+        "items"
+      ]
+    },
+    "DMMItemListResponseBodyResultItem": {
+      "title": "DMMItemListResponseBodyResultItem",
+      "type": "object",
+      "properties": {
+        "service_code": {
+          "type": "string"
+        },
+        "service_name": {
+          "type": "string"
+        },
+        "floor_code": {
+          "type": "string"
+        },
+        "floor_name": {
+          "type": "string"
+        },
+        "category_name": {
+          "type": "string"
+        },
+        "content_id": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "review": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemReview"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "affiliateURL": {
+          "type": "string"
+        },
+        "imageURL": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemImageURL"
+        },
+        "tachiyomi": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemTachiyomi"
+        },
+        "sampleImageURL": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemSampleImageURL"
+        },
+        "sampleMovieURL": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemSampleMovieURL"
+        },
+        "prices": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemPriceInfo"
+        },
+        "iteminfo": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfo"
+        },
+        "cdinfo": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemCDInfo"
+        },
+        "jancode": {
+          "type": "string"
+        },
+        "maker_product": {
+          "type": "string"
+        },
+        "isbn": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "string"
+        },
+        "URLsp": {
+          "type": "string"
+        },
+        "affiliateURLsp": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "bandaiinfo": {
+          "$ref": "#/$defs/DMMItemListResponseBodyResultItemBandaiInfo"
+        },
+        "date": {
+          "type": "string"
+        },
+        "volume": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "directory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "campaign": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemCampaign"
+          }
+        }
+      },
+      "required": [
+        "service_code",
+        "service_name",
+        "floor_code",
+        "floor_name",
+        "category_name",
+        "content_id",
+        "product_id",
+        "title",
+        "URL",
+        "affiliateURL",
+        "imageURL",
+        "prices",
+        "iteminfo",
+        "date",
+        "volume"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemReview": {
+      "title": "DMMItemListResponseBodyResultItemReview",
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "average": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "count",
+        "average"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemImageURL": {
+      "title": "DMMItemListResponseBodyResultItemImageURL",
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "string"
+        },
+        "small": {
+          "type": "string"
+        },
+        "large": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "list"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemTachiyomi": {
+      "title": "DMMItemListResponseBodyResultItemTachiyomi",
+      "type": "object",
+      "properties": {
+        "URL": {
+          "type": "string"
+        },
+        "affiliateURL": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "URL",
+        "affiliateURL"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemSampleImageURL": {
+      "title": "DMMItemListResponseBodyResultItemSampleImageURL",
+      "type": "object",
+      "properties": {
+        "sample_s": {
+          "$ref": "#/$defs/_DMMItemListResponseBodyResultItemSampleImageURLSample"
+        },
+        "sample_l": {
+          "$ref": "#/$defs/_DMMItemListResponseBodyResultItemSampleImageURLSample"
+        }
+      },
+      "required": []
+    },
+    "_DMMItemListResponseBodyResultItemSampleImageURLSample": {
+      "title": "_DMMItemListResponseBodyResultItemSampleImageURLSample",
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "image"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemSampleMovieURL": {
+      "title": "DMMItemListResponseBodyResultItemSampleMovieURL",
+      "type": "object",
+      "properties": {
+        "size_476_306": {
+          "type": "string"
+        },
+        "size_560_360": {
+          "type": "string"
+        },
+        "size_644_414": {
+          "type": "string"
+        },
+        "size_720_480": {
+          "type": "string"
+        },
+        "pc_flag": {
+          "type": "integer"
+        },
+        "sp_flag": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "size_476_306",
+        "size_560_360",
+        "size_644_414",
+        "size_720_480",
+        "pc_flag",
+        "sp_flag"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemPriceInfo": {
+      "title": "DMMItemListResponseBodyResultItemPriceInfo",
+      "type": "object",
+      "properties": {
+        "price": {
+          "type": "string"
+        },
+        "list_price": {
+          "type": "string"
+        },
+        "deliveries": {
+          "$ref": "#/$defs/_DMMItemListResponseBodyResultItemPriceInfoDeliveries"
+        },
+        "price_all": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "price"
+      ]
+    },
+    "_DMMItemListResponseBodyResultItemPriceInfoDeliveries": {
+      "title": "_DMMItemListResponseBodyResultItemPriceInfoDeliveries",
+      "type": "object",
+      "properties": {
+        "delivery": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemPriceInfoDelivery"
+          }
+        }
+      },
+      "required": [
+        "delivery"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemPriceInfoDelivery": {
+      "title": "DMMItemListResponseBodyResultItemPriceInfoDelivery",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "list_price": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "price",
+        "list_price"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemItemInfo": {
+      "title": "DMMItemListResponseBodyResultItemItemInfo",
+      "type": "object",
+      "properties": {
+        "genre": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "series": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "maker": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "actor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoDataWithRuby"
+          }
+        },
+        "actress": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoDataWithRuby"
+          }
+        },
+        "director": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoDataWithRuby"
+          }
+        },
+        "author": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoDataWithRuby"
+          }
+        },
+        "label": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "type": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "color": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "size": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "keyword": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoData"
+          }
+        },
+        "artist": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoDataWithRuby"
+          }
+        },
+        "fighter": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMItemListResponseBodyResultItemItemInfoDataWithRuby"
+          }
+        }
+      },
+      "required": []
+    },
+    "DMMItemListResponseBodyResultItemItemInfoData": {
+      "title": "DMMItemListResponseBodyResultItemItemInfoData",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "id"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemItemInfoDataWithRuby": {
+      "title": "DMMItemListResponseBodyResultItemItemInfoDataWithRuby",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "ruby": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "id"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemCDInfo": {
+      "title": "DMMItemListResponseBodyResultItemCDInfo",
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemBandaiInfo": {
+      "title": "DMMItemListResponseBodyResultItemBandaiInfo",
+      "type": "object",
+      "properties": {
+        "titlecode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "titlecode"
+      ]
+    },
+    "DMMItemListResponseBodyResultItemCampaign": {
+      "title": "DMMItemListResponseBodyResultItemCampaign",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "date_begin": {
+          "type": "string"
+        },
+        "date_end": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "date_begin",
+        "date_end"
+      ]
+    }
+  }
+}

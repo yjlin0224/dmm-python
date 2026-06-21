@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "maker_search",
+  "$ref": "#/$defs/DMMMakerSearchResponseBody",
+  "$defs": {
+    "DMMMakerSearchResponseBody": {
+      "title": "DMMMakerSearchResponseBody",
+      "type": "object",
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/DMMResponseBodyRequest"
+        },
+        "result": {
+          "$ref": "#/$defs/DMMMakerSearchResponseBodyResult"
+        }
+      },
+      "required": [
+        "request",
+        "result"
+      ]
+    },
+    "DMMResponseBodyRequest": {
+      "title": "DMMResponseBodyRequest",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "DMMMakerSearchResponseBodyResult": {
+      "title": "DMMMakerSearchResponseBodyResult",
+      "type": "object",
+      "properties": {
+        "result_count": {
+          "type": "integer"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "first_position": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "total_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "site_name": {
+          "type": "string"
+        },
+        "site_code": {
+          "$ref": "#/$defs/DMMSiteCode"
+        },
+        "service_name": {
+          "type": "string"
+        },
+        "service_code": {
+          "type": "string"
+        },
+        "floor_id": {
+          "type": "string"
+        },
+        "floor_name": {
+          "type": "string"
+        },
+        "floor_code": {
+          "type": "string"
+        },
+        "maker": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMMakerSearchResponseBodyResultMaker"
+          }
+        }
+      },
+      "required": [
+        "result_count",
+        "status",
+        "first_position",
+        "total_count",
+        "site_name",
+        "site_code",
+        "service_name",
+        "service_code",
+        "floor_id",
+        "floor_name",
+        "floor_code"
+      ]
+    },
+    "DMMSiteCode": {
+      "title": "DMMSiteCode",
+      "enum": [
+        "DMM.com",
+        "FANZA"
+      ]
+    },
+    "DMMMakerSearchResponseBodyResultMaker": {
+      "title": "DMMMakerSearchResponseBodyResultMaker",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ruby": {
+          "type": "string"
+        },
+        "list_url": {
+          "type": "string"
+        },
+        "maker_id": {
+          "type": "string"
+        },
+        "another_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "ruby",
+        "maker_id"
+      ]
+    }
+  }
+}

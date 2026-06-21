@@ -1,0 +1,6 @@
+version: "3"
+
+tasks:
+  generate-schema:
+    desc: Generate JSON Schema for all response types into docs/schema/
+    cmd: uv run python scripts/generate_schema.py

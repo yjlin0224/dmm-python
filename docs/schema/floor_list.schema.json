@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "floor_list",
+  "$ref": "#/$defs/DMMFloorListResponseBody",
+  "$defs": {
+    "DMMFloorListResponseBody": {
+      "title": "DMMFloorListResponseBody",
+      "type": "object",
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/DMMResponseBodyRequest"
+        },
+        "result": {
+          "$ref": "#/$defs/DMMFloorListResponseBodyResult"
+        }
+      },
+      "required": [
+        "request",
+        "result"
+      ]
+    },
+    "DMMResponseBodyRequest": {
+      "title": "DMMResponseBodyRequest",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "DMMFloorListResponseBodyResult": {
+      "title": "DMMFloorListResponseBodyResult",
+      "type": "object",
+      "properties": {
+        "site": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMFloorListResponseBodyResultSite"
+          }
+        }
+      },
+      "required": [
+        "site"
+      ]
+    },
+    "DMMFloorListResponseBodyResultSite": {
+      "title": "DMMFloorListResponseBodyResultSite",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "$ref": "#/$defs/DMMSiteCode"
+        },
+        "service": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMFloorListResponseBodyResultService"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "code",
+        "service"
+      ]
+    },
+    "DMMSiteCode": {
+      "title": "DMMSiteCode",
+      "enum": [
+        "DMM.com",
+        "FANZA"
+      ]
+    },
+    "DMMFloorListResponseBodyResultService": {
+      "title": "DMMFloorListResponseBodyResultService",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "floor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DMMFloorListResponseBodyResultFloor"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "code",
+        "floor"
+      ]
+    },
+    "DMMFloorListResponseBodyResultFloor": {
+      "title": "DMMFloorListResponseBodyResultFloor",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "code"
+      ]
+    }
+  }
+}
