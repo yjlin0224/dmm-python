@@ -4,6 +4,7 @@ Predict the JAV product code (番号) fields from an arbitrary input string.
 Public API:
     predict_jav_code(input) -> JavCodePrediction
 """
+
 from __future__ import annotations
 
 import re
@@ -19,10 +20,10 @@ _VIDEO_EXTENSIONS = {".mp4", ".mkv", ".avi", ".wmv", ".m4v", ".mpg", ".mov"}
 
 _SOURCE_PREFIX_RE = re.compile(
     r"^(?:"
-    r"\[[\w.\-]+\]@?"           # [44x.me]@ or [44x.me]
-    r"|【[^】]+】"              # 【sex8.cc】 (fullwidth lenticular brackets)
-    r"|[\w.\-]+@"               # hhd800.com@ or COSAV_MYS@
-    r"|[a-z0-9]+\.[a-z]{2,4}-" # amav.xyz- (lowercase domain with TLD then dash)
+    r"\[[\w.\-]+\]@?"  # [44x.me]@ or [44x.me]
+    r"|【[^】]+】"  # 【sex8.cc】 (fullwidth lenticular brackets)
+    r"|[\w.\-]+@"  # hhd800.com@ or COSAV_MYS@
+    r"|[a-z0-9]+\.[a-z]{2,4}-"  # amav.xyz- (lowercase domain with TLD then dash)
     r")"
 )
 _QUALITY_TOKENS = re.compile(
@@ -55,6 +56,7 @@ class _ParsedType(str, Enum):
 # Public result type
 # ---------------------------------------------------------------------------
 
+
 @dataclass(frozen=True)
 class JavCodePrediction:
     parsed_type: str
@@ -70,12 +72,11 @@ class JavCodePrediction:
 # Internal helpers
 # ---------------------------------------------------------------------------
 
+
 def _has_cjk(s: str) -> bool:
     for c in s:
         cp = ord(c)
-        if (0x3000 <= cp <= 0x9FFF
-                or 0xF900 <= cp <= 0xFAFF
-                or 0xFF00 <= cp <= 0xFFEF):
+        if 0x3000 <= cp <= 0x9FFF or 0xF900 <= cp <= 0xFAFF or 0xFF00 <= cp <= 0xFFEF:
             return True
     return False
 
@@ -86,7 +87,7 @@ def _strip_source_prefix(name: str) -> str:
         return result
     m = _HJD_PREFIX_RE.match(name)
     if m and m.end() < len(name):
-        rest = name[m.end():]
+        rest = name[m.end() :]
         if re.match(r"[\da-zA-Z]", rest):
             return rest
     return name
@@ -110,10 +111,19 @@ def _strip_quality_suffixes(name: str) -> str:
 
 def _strip_noise_suffixes(name: str) -> str:
     name = re.sub(r"-uncensored.*$", "", name, flags=re.IGNORECASE)
-    name = re.sub(r"([A-Z0-9\-]+\d)[　-鿿豈-﫿＀-￯].*$", r"\1", name, flags=re.IGNORECASE)
-    name = re.sub(r"([A-Z0-9\-]+\d)\s+[　-鿿豈-﫿＀-￯].*$", r"\1", name, flags=re.IGNORECASE)
+    name = re.sub(
+        r"([A-Z0-9\-]+\d)[　-鿿豈-﫿＀-￯].*$", r"\1", name, flags=re.IGNORECASE
+    )
+    name = re.sub(
+        r"([A-Z0-9\-]+\d)\s+[　-鿿豈-﫿＀-￯].*$", r"\1", name, flags=re.IGNORECASE
+    )
     name = re.sub(r"_?\[4K\]$", "", name, flags=re.IGNORECASE)
-    name = re.sub(r"^([A-Z0-9]*[A-Z][A-Z0-9]*-[A-Z]?\d+[A-Z]?)-[A-Za-z]{2,}.*$", r"\1", name, flags=re.IGNORECASE)
+    name = re.sub(
+        r"^([A-Z0-9]*[A-Z][A-Z0-9]*-[A-Z]?\d+[A-Z]?)-[A-Za-z]{2,}.*$",
+        r"\1",
+        name,
+        flags=re.IGNORECASE,
+    )
     name = re.sub(r"\.[a-z]{2,4}$", "", name, flags=re.IGNORECASE)
     return name.rstrip(" .,")
 
@@ -182,7 +192,7 @@ def _parse_core(core: str) -> tuple[_ParsedType, str, str, str]:
         part_str = ""
         if pm:
             part_str = pm.group(1)
-            number = number[:pm.start()]
+            number = number[: pm.start()]
         return _ParsedType.MAKER_CODE, "Tokyo-Hot", number.upper(), part_str
 
     # Date-studio: YYMMDD_NNN-STUDIO
@@ -234,12 +244,22 @@ def _parse_core(core: str) -> tuple[_ParsedType, str, str, str]:
         m = re.match(r"^(\d+)?([a-z]+)(\d{3,})([a-z]?)$", rest.lower())
         if m:
             vendor = "h_" + (m.group(1) or "")
-            return _ParsedType.DELIVERY_CODE, vendor + m.group(2), m.group(3), m.group(4)
+            return (
+                _ParsedType.DELIVERY_CODE,
+                vendor + m.group(2),
+                m.group(3),
+                m.group(4),
+            )
 
     # 配信品番
     m = _DELIVERY_CODE_RE.match(core.lower())
     if m:
-        return _ParsedType.DELIVERY_CODE, (m.group(1) or "") + m.group(2), m.group(3), m.group(4)
+        return (
+            _ParsedType.DELIVERY_CODE,
+            (m.group(1) or "") + m.group(2),
+            m.group(3),
+            m.group(4),
+        )
 
     return _ParsedType.UNKNOWN, "", "", ""
 
@@ -270,6 +290,7 @@ def _build_cid(ptype: _ParsedType, number: str, after_part: str) -> str:
 # Public entry point
 # ---------------------------------------------------------------------------
 
+
 def predict_jav_code(input: str) -> JavCodePrediction:
     """Predict the JAV product code fields from an arbitrary input string.
 
@@ -297,9 +318,11 @@ def predict_jav_code(input: str) -> JavCodePrediction:
         suffix = ""
 
     # Trailing A-D on number = part indicator (except hhd800.com@ source)
-    if (ptype == _ParsedType.MAKER_CODE
-            and re.match(r".*\d[A-D]$", number)
-            and not input.lower().startswith("hhd800.com@")):
+    if (
+        ptype == _ParsedType.MAKER_CODE
+        and re.match(r".*\d[A-D]$", number)
+        and not input.lower().startswith("hhd800.com@")
+    ):
         part = number[-1]
         number = number[:-1]
 
