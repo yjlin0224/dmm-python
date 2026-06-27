@@ -24,6 +24,7 @@ _SOURCE_PREFIX_RE = re.compile(
     r"|【[^】]+】"  # 【sex8.cc】 (fullwidth lenticular brackets)
     r"|[\w.\-]+@"  # hhd800.com@ or COSAV_MYS@
     r"|[a-z0-9]+\.[a-z]{2,4}-"  # amav.xyz- (lowercase domain with TLD then dash)
+    r"|\d+_[\w.]+_"  # 049_3xplanet_ (numeric index + source name with underscore)
     r")"
 )
 _QUALITY_TOKENS = re.compile(
@@ -124,6 +125,7 @@ def _strip_noise_suffixes(name: str) -> str:
         name,
         flags=re.IGNORECASE,
     )
+    name = re.sub(r"~\S+", "", name)  # strip watermark suffixes like ~667x.net
     name = re.sub(r"\.[a-z]{2,4}$", "", name, flags=re.IGNORECASE)
     return name.rstrip(" .,")
 
@@ -333,6 +335,13 @@ def predict_jav_code(input: str) -> JavCodePrediction:
     split_part = _part_to_num(part)
     maker_code = _build_maker_code(ptype, prefix, number, suffix)
     cid = _build_cid(ptype, number, after_part)
+
+    # Normalize delivery_code number to match the display form used in maker_code
+    if ptype == _ParsedType.DELIVERY_CODE:
+        num_display = number.lstrip("0") or "0"
+        if len(num_display) < 3:
+            num_display = num_display.zfill(3)
+        number = num_display
 
     return JavCodePrediction(
         parsed_type=ptype.value,
