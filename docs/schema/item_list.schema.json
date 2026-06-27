@@ -204,8 +204,7 @@
         "imageURL",
         "prices",
         "iteminfo",
-        "date",
-        "volume"
+        "date"
       ]
     },
     "DMMItemListResponseBodyResultItemReview": {

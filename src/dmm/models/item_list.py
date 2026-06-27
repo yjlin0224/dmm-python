@@ -442,7 +442,7 @@ class DMMItemListResponseBodyResultItem(msgspec.Struct, kw_only=True, frozen=Tru
     )
 
     _date: str = msgspec.field(name="date")
-    _volume: str = msgspec.field(name="volume")
+    _volume: str | msgspec.UnsetType = msgspec.field(name="volume", default=msgspec.UNSET)
     _number: str | msgspec.UnsetType = msgspec.field(  # [TODO] unsure
         name="number", default=msgspec.UNSET
     )
@@ -458,8 +458,10 @@ class DMMItemListResponseBodyResultItem(msgspec.Struct, kw_only=True, frozen=Tru
         return datetime.fromisoformat(self._date)
 
     @property
-    def volume(self) -> int:
+    def volume(self) -> int | None:
         # "120" → 120 minutes; "1:07:00" (H:MM:SS) → 67 minutes
+        if isinstance(self._volume, msgspec.UnsetType):
+            return None
         v = self._volume
         if ":" in v:
             h, m, _ = v.split(":")
