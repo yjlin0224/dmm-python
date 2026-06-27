@@ -97,7 +97,7 @@ For Python SDK fields that are renamed via a property, the format is `_raw: type
 | `product_id` | string | `string` | `str` |
 | `title` | string | `string` | `str` |
 | `date` | string | `string` | `_date: str` → property `date: datetime` |
-| `volume` | integer (JSON example is string) | `string` | `_volume: str` → property `volume: int` (handles both `"120"` and `"1:07:00"`) |
+| `volume` | integer (JSON example is string) | `string` \| absent | `_volume: str \| UNSET` → property `volume: int \| None` (handles both `"120"` and `"1:07:00"`) |
 | `number` | integer | | `_number: str \| UnsetType` → property `number: Optional[int]` (type unverified) |
 | `URL` | string | `string` | `url: str` (JSON name `URL`) |
 | `affiliateURL` | string | `string` | `affiliate_url: str` (JSON name `affiliateURL`) |
@@ -134,6 +134,8 @@ For Python SDK fields that are renamed via a property, the format is `_raw: type
 | `list` | string | `string` | `str` |
 | `small` | string | `string` | `str \| UnsetType` |
 | `large` | string | `string` | `str \| UnsetType` |
+
+> **Note:** `large` is only present for digital service items. Mono items only have `list` and `small`. The `large`-sized image is likely omitted from the API response rather than absent from the CDN — the website itself uses the same URL pattern. To retrieve it, replace the trailing `ps` in the `small` URL with `pl` (e.g. `…ps.jpg` → `…pl.jpg`).
 
 ### Response — sampleImageURL
 

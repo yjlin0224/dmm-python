@@ -97,7 +97,7 @@
 | `product_id` | string | `string` | `str` |
 | `title` | string | `string` | `str` |
 | `date` | string | `string` | `_date: str` → property `date: datetime` |
-| `volume` | integer（JSON 例は文字列） | `string` | `_volume: str` → property `volume: int`（`"120"` および `"1:07:00"` 形式に対応） |
+| `volume` | integer（JSON 例は文字列） | `string` \| absent | `_volume: str \| UNSET` → property `volume: int \| None`（`"120"` および `"1:07:00"` 形式に対応） |
 | `number` | integer | | `_number: str \| UnsetType` → property `number: Optional[int]`（型は未検証） |
 | `URL` | string | `string` | `url: str`（JSON name `URL`） |
 | `affiliateURL` | string | `string` | `affiliate_url: str`（JSON name `affiliateURL`） |
@@ -134,6 +134,8 @@
 | `list` | string | `string` | `str` |
 | `small` | string | `string` | `str \| UnsetType` |
 | `large` | string | `string` | `str \| UnsetType` |
+
+> **備考:** `large` は digital サービスの作品にのみ存在します。mono の作品には `list` と `small` のみが含まれます。大サイズの画像は CDN 上には存在するものの API レスポンスから省略されている可能性があり、ウェブサイト自体も同じ URL パターンを使用しています。取得するには `small` の URL 末尾の `ps` を `pl` に置換してください（例: `…ps.jpg` → `…pl.jpg`）。
 
 ### レスポンス — sampleImageURL
 
